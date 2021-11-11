@@ -1,0 +1,62 @@
+package gameProject;
+
+public class Player2 extends Player1{
+	
+	private int health ;
+	private boolean armour;
+	public Player2(String name, String weapan, int health,boolean armour) {
+		super(name, weapan, health);
+		this.health= health ;
+		this.armour= armour;
+		if(health < 0 || health >  100) {
+			this.health = 100;
+		}else
+			this.health = health ;
+		
+	}
+	public void damageByGun1() {
+		if(armour) {
+			this.health -=20;
+			if(this.health<=0) {
+				this.health = 0;
+				
+		}System.out.println("armour is on and got hit by gun 1 . health is reduce by 20. New health  is " + this.health);
+		
+		}if (!armour) {
+			this.health -=30;
+		}
+		if(this.health<=0) {
+			this.health = 0;
+			
+		}System.out.println("armour is off and got hit by gun 1 . health is reduce by 30. New health  is " + this.health);
+		
+		if (this.health== 0) {
+			System.out.println( getName() + " is dead");
+		}
+	}
+	public void damageByGun2() {
+		if(armour) {
+			this.health -=40;
+			if(this.health<=0) {
+				this.health = 0;
+			
+			}
+			System.out.println("armour is on and got hit by gun 2 . health is reduce by 40. New health  is " + this.health);
+		
+		}if (!armour) {
+			this.health -=50;
+		}
+		if(this.health<=0) {
+			this.health = 0;
+			
+		}
+		System.out.println("armour is off and got hit by gun 2 . health is reduce by 50. New health  is " + this.health);
+		
+		if (this.health== 0) {
+			System.out.println( getName() + " is dead");
+		}
+		
+	}
+
+	
+}
