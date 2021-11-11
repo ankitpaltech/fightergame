@@ -1,0 +1,60 @@
+package gameProject;
+
+public class Player1 {
+	public String weapan;
+	public int  health;
+	public String name;
+	public Player1(String name, String weapan, int  health) {
+	this.name = name ;
+	this.weapan= weapan;
+	if(health < 0 || health >  100) {
+		this.health = 100;
+	}else
+		this.health = health ;
+	
+	}
+	public void damageByGun1() {
+	this.health -= 30;
+	if(this.health <= 0) {
+		this.health = 0;
+	}
+	System.out.println(  getName() + " got hit by gun 1 . health is reduced by 30. " + "New health is " + this.health);
+	if(this.health == 0 ) {
+		System.out.println( getName() + " is dead ");
+	}
+	}
+	public void damageByGun2() {
+		this.health -= 50;
+		if(this.health <= 0) {
+			this.health = 0;
+		}
+		System.out.println("got hit by gun 2 . health is reduced . " + "New health is " + this.health);
+		if(this.health == 0 ) {
+			System.out.println( getName() + " is dead ");
+		}
+		}
+	
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name ;
+	}
+	public String getWeapan() {
+		return weapan;
+	}
+	public void setWeapan(String weapan) {
+		this.weapan =  weapan;
+	}
+	public int getHealth() {
+		return health;
+	}
+	public void setName( int health) {
+		this.health = health ;
+	}
+	
+		
+	
+	
+}
